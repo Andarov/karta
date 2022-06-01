@@ -1,12 +1,3 @@
-:root {
-    --text-color: ;
-    --font-family: ;
-    --body-bg-color: ;
-}
-
-/* FONTS */
-
-
 html {
     height: 100%;
     scroll-behavior: smooth;
@@ -19,22 +10,16 @@ html {
     box-sizing: inherit;
 }
 
-*:focus {
-    outline: 3px dashed var(--text-color);
-    outline-offset: 3px;
-}
-
 body {
     display: flex;
     flex-direction: column;
     height: 100%;
-    background-color: var(--body-bg-color);
-    font-family: var(--font-family);
+    background-color: #fff;
+    font-family: sans-serif;
     font-style: normal;
-    font-weight: normal;
+    font-weight: 500;
     font-size: 14px;
     line-height: 16px;
-    color: var(--text-color);
 }
 
 img {
@@ -49,13 +34,162 @@ a {
 
 .container {
     width: 100%;
-    max-width: px;
+    max-width: 1290px;
     padding-left: 20px;
     padding-right: 20px;
     margin-left: auto;
     margin-right: auto;
 }
 
-.main-content {
-    flex-grow: 1;
+.card-wrapper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #555;
+}
+
+.card {
+    width: 450px;
+    height: 300px;
+    position: relative;
+    perspective: 1000px;
+}
+
+.front, 
+.back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 30px 20px 10px 40px;
+    background-color: rgb(9, 99, 108);
+    color: #f3f3f3;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    transition: transform 1s ease;
+}
+
+.card:hover .front {
+    transform: rotateY(180deg);
+}
+
+.card:hover .back {
+    transform: rotateY(360deg);
+}
+
+.front {
+    position: relative;
+}
+
+.back {
+    transform: rotateY(180deg);
+}
+
+
+.logo {
+    display: block;
+    text-align: right;
+    font-weight: 700;
+    font-size: 17px;
+    margin-bottom: 40px;
+}
+.set {
+    display: block;
+    width: 90px;
+    height: 60px;
+    background-image: linear-gradient(
+    to right, 
+    gold 0%, 
+    gold 32%, 
+    black 32%, 
+    black 33%, 
+    gold 33%,
+    gold 65%,
+    black 65%,
+    black 66%,
+    gold 66%,
+    gold 100%);
+    border-radius: 8px;
+    margin-bottom: 30px;
+    margin-left: 15px;
+}
+
+.number {
+    display: block;
+    font-size: 35px;
+    color: rgb(180, 160, 47);
+    margin-bottom: 35px;
+}
+
+.when {
+    display: block;
+    font-size: 20px;
+    margin-left: 170px;
+    color: rgb(180, 160, 47);
+    margin-bottom: 25px;
+}
+
+.name {
+    font-size: 20px;
+    color: rgb(180, 160, 47);
+}
+
+.img {
+    width: 110px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 14px;
+    bottom: 20px;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 700;
+    font-style: oblique;
+    color: rgb(180, 160, 47);
+    background-color: rgb(13, 28, 63);
+    border-radius: 5px;
+}
+
+/* BACK */
+.about {
+    display: block;
+    width: 200px;
+    font-size: 15px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.site {
+    display: block;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.box {
+    display: block;
+    width: 170px;
+    height: 45px;
+    background-color: #fff;
+    margin-bottom: 80px;
+}
+
+.rule {
+    display: block;
+    width: 280px;
+    font-size: 9px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.tel {
+    font-size: 9px;
+    text-transform: uppercase;
 }
